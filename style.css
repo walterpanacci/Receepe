@@ -61,7 +61,7 @@ body {
 }
 
 .container {
-  width: 168rem;
+  max-width: 168rem;
   height: auto;
   margin: 9rem auto;
   display: grid;
