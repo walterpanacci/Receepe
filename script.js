@@ -29,7 +29,7 @@ const requestMeal = async function () {
     "https://pro.openweathermap.org/data/2.5/forecast/hourly?lat=43.7&lon=11.2&appid=13f160d255bb357f3c1624f666e4e52c"
   );
   const data = await res.json();
-  console.log(data);
+  //console.log(data);
 };
 
 /** API Weather key: 13f160d255bb357f3c1624f666e4e52c */
@@ -51,7 +51,7 @@ const ingredientsList = document.querySelector(".ingredients-list");
 const stepList = document.querySelector(".step-list");
 const nutritionList = document.querySelector(".nutrition-list");
 
-console.log(buttonQuery);
+//console.log(buttonQuery);
 
 let search = [];
 let images = [];
@@ -67,8 +67,8 @@ const requestSpoon = async function () {
     );
     const data = await res.json();
     search = data.results;
-    console.log(data);
-    console.log(search);
+    //console.log(data);
+    //console.log(search);
     searchContainer.innerHTML = "";
     search.forEach((recipe) =>
       searchContainer.insertAdjacentHTML(
@@ -84,9 +84,9 @@ const requestSpoon = async function () {
         </a>`
       )
     );
-    console.log(search);
+    //console.log(search);
     search.forEach((recipe) => images.push([recipe.id, recipe.image]));
-    console.log(images);
+    //console.log(images);
   } catch (err) {
     alert(`Something went wrong: ${err}`);
   }
@@ -94,8 +94,8 @@ const requestSpoon = async function () {
 
 buttonQuery.addEventListener("click", async function (e) {
   e.preventDefault();
-  console.log("ok");
-  console.log(inputQuery.value);
+  //console.log("ok");
+  //console.log(inputQuery.value);
   requestSpoon();
 });
 
@@ -107,7 +107,7 @@ buttonQuery.addEventListener("click", async function (e) {
       const id = window.location.hash.slice(1);
       const searched = document.querySelector(`a[href='#${id}']`);
       const recipes = document.querySelectorAll(".recipe");
-      console.log(recipes);
+      //console.log(recipes);
       recipes.forEach((rec) => (rec.style.backgroundColor = "#61a5c2"));
       searched.style.backgroundColor = "#eee";
       const imgArr = images.find((el) => el[0] === +id);
@@ -290,7 +290,7 @@ buttonQuery.addEventListener("click", async function (e) {
 
 recipeButtons.forEach((btn) =>
   btn.addEventListener("click", function () {
-    console.log(this.getAttribute("open"));
+    //console.log(this.getAttribute("open"));
     contents.forEach((cntent) => cntent.classList.add("hidden"));
     const open = document.querySelector(
       `.content[content=${this.getAttribute("open")}]`
@@ -319,7 +319,7 @@ const answerList = document.querySelector(".answer-list");
 
 data.addEventListener("submit", function (e) {
   e.preventDefault();
-  console.log(answerList);
+  //console.log(answerList);
   answerList.innerHTML = "";
   const calories = +inputCalories.value.replace(",", ".");
   const weight = +inputWeight.value;
